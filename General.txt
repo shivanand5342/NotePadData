@@ -1,0 +1,289 @@
+Mindtree:
+ID: SCM5137
+Mindtree Employee ID (MID) is: M1070179
+M1070179@mindtree.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+======================================================================================================
+Git Hub
+Shivanand5342
+Github@5342
+https://github.com/Shivanand5342/SeleniumPrac.git
+
+Accenture ID: C9609858 
+
+
+
+Cast Certificate: file:///D:/Documents/SelfDoc/Docs/ShivanadaCast&IncomeCertificate.pdf
+
+project = XP8-Q AND issuetype = Bug AND status != Closed AND Variants = Platform AND resolution = Unresolved AND 
+assignee = "ranjan.k@sonimtech.com" AND labels = Desktop_Mode ORDER BY priority
+
+***************************************************
+IVR number
+08040302038
+08040302039
+08040302040
+**********************************************************************************************************************
+
+**********************************************************************************************************************
+Si no	 	 : 29 
+TYSS ID      : TYC061881
+Name		 : Shivananda M 
+Web Mail: http://webmail.testyantra.in/
+UN: shivananda.m@testyantra.in
+PW: Tyss@5342
+
+Email ID: Shivananda.M@coforgetech.com
+E-Code : 80048079
+
+Tech M: SC0C92794@techmahindra.com
+**********************************************************************************************************************
+Flashig tool
+XP8:
+MainLine
+pst tool ID  : test1_multi_XP8    
+pass 		 : 54321
+
+RS80
+UN : test_multi_rs
+PW : test_multi_rs123
+
+Telus:
+UN: telus
+PW: Telus123#
+
+Bell:
+UN: bell
+PW: Bell123#
+
+Rogers:
+UN: rogers
+PW: Rogers123#
+
+XP5s:
+testmulti
+testmulti123
+
+XP3:
+MainLine:	testmulti_xp3
+			12345
+Telus:  	test_xp3_telus 
+			test123
+Rogers: 	test_xp3_rogers 
+			test123
+ATT:    	testatt_xp3 
+			12345
+Vzw:   		testverizon_xp3 
+			12345
+		
+***********************************************************
+SMSC for airtel:
++919845087001
+
+Gmail:
+testsonim05@gmail.com
+sonim@123
+
+Facebook test account:
+Instagram - use same facebook
+Uid : h.sonimg@gmail.com
+Pwd : sonim@123
+
+Twitter account:
+Id: 9513645874
+Pwd: Sonim@123
+
+***********************************************************
+Download mode: power off -> volume down -> insert cable
+adb reboot bootloader
+***********************************************************
+Apps:
+CPU load generator
+--------------------------------------
+configure google account > fota upgrade the device > 
+put device in recovery mode (adb reboot recovery > hold the power key, single press the volume up key) > 
+perform FDR from menu listed > after FDR > clear SUW screen and come to home screen
+--------------------------------------
+***********************************************************
+*#546368#* LG hidden menu (*#LGmenu#*modulenumber#)
+Factory test application(CIT)	#*#248#*# >> .789=
+Engineer mode	#*#4636#*# >> .20130331=
+Show IMEI	*#06#
+FT menu	#*#34353#*#
+Enter GPS debug	#*#246#*#
+test mode (to connect to QPST/QXDM) #*#0701#*#
+Enable Developer options (USB debugging mode)	*#*#2387#*#*
+to take logs in device: *#*#5644464#*#*
+IMS -> *#*#34353#*#*
+IPV6 -> itu.int 
+*****************
+QXDM
+
+CM service request - CSFB to UTRAN and voice call gets established over CS networkTest 
+combined EPS/IMSI detach
+Subtitle -> Extended service request Msg (Mobile originationg CS fallback)
+NV ITEM to Auto call recieve = 00074
+
+******************************************************************
+DSDS ->Dual sim Dual standbye 
+DSSS -> Dual sim single standbye 
+
+******************************************************************
+VPN: https://www.vpnbook.com/
+
+________________________________________________________________________________________________
+----------------------------SMT Build flashing Method without QCN --------------------------------
+--------------------------------------------------------------------------------------------------
+1. Note the IMEI(00550),WLAN(04678) & BT MAC(00447) values 
+2. Perform SMT flash ( please refer the shared doc for more info)
+   a. Flash SMT build using QFIL.
+   b. Use rawprogram0_unsparse_crossflashing
+3. Write the IMEI(00550),WLAN(04678) & BT MAC(00447)
+4. Reboot the device 
+5. Device should latch to network 
+6. Remove the SIM and power on then Lock the SIM using Sonim Utool
+7. Insert the SIM and Power on Generate the Unlock code then enter code in Device 
+8. Check the Network latch status 
+9. Flash the N/O version and verify Network Latch status (note Device ahould latch to network 
+
+**************************************************************************************************
+Build flow
+1. FC build
+2. weekly build
+3. Final build
+4. LAB
+5. TA for build 
+6. Release note(Mat test)
+7. production fota test(when build is in test environment the FOTA title will be as per we set in server
+                        when build is in the production environment the FOTA title will be "This softward update consists of criticle platform fixes, and the latest Android security patches.")
+**************************************************************************************************		
+SET dut1_id=%1
+SET dut2_id=%2
+SET mdn1=%3
+SET mdn2=%4
+SET /a loop=%5
+ECHO ----------Adding Phonebook
+for /l %%i in (1, 1, %loop%) do (
+adb -s %dut1_id% logcat -c
+start "log_window" /MIN cmd /c "adb -s %dut1_id% logcat -v threadtime -b all > Contact_%%i.txt
+if %%i EQU 1 (
+adb -s %dut1_id% shell am start com.android.dialer
+adb -s %dut1_id% shell input keyevent 82
+adb -s %dut1_id% shell "input keyevent 20 && input keyevent 20 && input keyevent 23 && input keyevent 23 && input keyevent 20 && input keyevent 21"
+adb -s %dut1_id% shell input text Reference
+adb -s %dut1_id% shell "input keyevent 82 && input keyevent 23"
+) else (
+adb -s %dut1_id% shell input keyevent 3
+adb -s %dut1_id% shell "input keyevent 22 && input keyevent 19 && input keyevent 23"
+adb -s %dut1_id% shell "input keyevent 82 && input keyevent 20 && input keyevent 23"
+adb -s %dut1_id% shell "input keyevent 20 && input keyevent 21"
+adb -s %dut1_id% shell input text Sample_contact
+adb -s %dut1_id% shell input keyevent 20
+adb -s %dut1_id% shell input text 1234567890
+adb -s %dut1_id% shell "input keyevent 82 && input keyevent 23"
+adb -s %dut1_id% shell "input keyevent 4 && input keyevent 4 && input keyevent 3"
+)
+taskkill /IM cmd.exe /FI "WINDOWTITLE eq log_window"
+findstr /c:"act=android.intent.action.INSERT dat=content://com.android.contacts/contacts" "Contact_%%i.txt" > temp.txt
+if errorlevel 1 (
+ECHO Test is FAIL
+ECHO #%%i Contact ------ FAIL >> Results.txt
+) else (
+ECHO Test is PASS
+ECHO #%%i Contact - PASS >> Results.txt
+)
+
+)
+====================================================================================================================
+If device flashed without removing account
+adb reboot bootloader
+fastboot erase frp
+adb reboot
+====================================================================================================================
+FOTA Update battery status
+O to Q - 60%
+Q - Q - 40%
+====================================================================================================================
+Hyper Terminal Codes
+at%swv
+
+at%swov
+
+at%swcv
+
+at%swfv=at%swfv
+A1456740436-M1456740436-C1456745034-U1456745039-1
+
+AT%ULCW=1,1234567890123456,2,1234567890123456,4,1234567890123456,8,1234567890123456,16,1234567890123456
+
+AT%NTCODE="2","FFF,FFF,FFFFFFFF,FFFFFFFF,11","294,02F,FFFFFFFF,FFFFFFFF,FF"
+
+AT%SLTYPE=1
+
+AT%IMEI=0,0,4,4,0,2,3,4,0,4,1,2,9,6,8
+
+AT%IMEI2=0,0,4,4,0,2,3,4,0,2,6,3,6,0,1
+
+adb shell getprop ro.build.fingerprint
+
+adb shell getprop ro.build.version.incremental
+
+adb shell getprop ro.com.google.gmsversion
+ 
+adb shell getprop  ro.lge.swversion
+===================================================================================================================
+What is my user agent?
+
+Flash tool check points
+1. OS flash from lower to upper versions(N-O or O-Q and just normal flash)
+2. Parellel flash
+3. EDL flash
+======================================================================================================================
+webmail: http://webmail.testyantra.com/logout/?locale=en
+testlink_TYSS: http://125.63.77.137:36007/login.php
+appium: http://www.software-testing-tutorials-automation.com/2015/10/appium-tutorials.html
+ESS: http://10.10.10.41:8585/testyantra/login.php
+GOTA: https://partner.android.com/ota
+eschat: https://portal.sla-ptt.com/portal/
+SL pw recovery: https://ssp.imw.southernlinc.com:49641/ssam/recoverPassword
+testlink: http://10.15.1.36/login.php
+SL FOTA ticket: https://portal.motive.com/request/login.jsp?permissionViolation=true&os_destination=%2Fbrowse%2FSOULIOT-176
+SL MD5: https://www.qqxiuzi.cn/bianma/md5.htm
+intranet: http://intranet.sonimtech.com/user
+greythr: https://sonim.greythr.com/uas/portal/auth/logout
+Nokia motive: https://xmcdpi.xdev.motive.com/ui/home.html?logoutSuccess=1#/
+BZ: https://bugzilla.sonimcloud.com/attbugzilla/
+=======================================================================================================================
+MMDDLLNNN(MM-birth month, DD-birth date, LL-first 2 letters of last name and NNN-last 3 digits of PAN).
+Time Sheet
+Account Information s2shivanand@gmail.com
+Username	Shivananda.M
+Password	Wfh@5342
+========================================================================================================================
+ 
+

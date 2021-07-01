@@ -1,0 +1,79 @@
+C:\Users\shivananda.m\AppData\Local\Temp\QXDM\ISF
+PDCD:
+osi lsyeer
+lte stack and layers
+sib mib
+
+
+qxdm login: https://myaccount.qualcomm.com/static/registration/login.html?TYPE=33554433&REALMOID=06-00080ed5-4a1b-1529-9b91-2e0d0a35f024&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=$SM$3fDqOYKHJxzpIZPr%2fn8KIx3w0nVTe5%2bfAFza9cSe402EShObc8Lno0LoyzNHQPLP&TARGET=$SM$HTTPS%3a%2f%2fcreatepoint%2eqti%2equalcomm%2ecom%2fdashboard%2f#product-kit/search
+
+NW to UE Synchronization:
+http://www.techplayon.com/pss-and-sss-lte-synchronization/
+https://www.sharetechnote.com/html/BasicProcedure_LTE_TimeSync.html
+SIP SIP response status codes: https://www.websitepulse.com/kb/sip_response_status_codes
+MIB and SIB -> http://www.techtrained.com/importance-sibs-mibs-lte/
+Task:
+RACH > https://www.sharetechnote.com/html/RACH_LTE.html
+Cell id selection
+
+https://www.youtube.com/watch?v=9A-Mo76jM3I&feature=share :How UE identifies physical id , bandwidth.
+
+https://www.netmanias.com/en/post/techdocs/6102/emm-initial-attach-lte/emm-procedure-1-initial-attach-part-2-call-flow-of-initial-attach
+https://www.netmanias.com/en/?m=view&id=techdocs&no=10441
+https://www.eventhelix.com/lte/attach/lte-attach.pdf
+
+IMS & LTE
+http://www.sharetechnote.com/
+https://www.netmanias.com/en/?m=kws&g=80
+http://sipinterviewquestions.blogspot.com/2013/01/sip-interview-questions-and-answers-if.html
+http://eventhelix.com/
+http://eventhelix.com/ims/
+NV browser: http://mobiles-han.blogspot.com/2012/06/qualcomm-tools.html
+LTE Handover Overview => http://www.3glteinfo.com/lte-handover-overview/
+http://www.rfwireless-world.com/Terminology/lte-terminology.html
+
+Diameter in IMS: http://www.efort.com/index.php?PageID=21&l=en&f_id=133&imageField.x=6&i
+TTCN 3: http://site.uottawa.ca/~bernard/miniSIP_tutorial.html
+
+
+Sameer:
+IMS Attach procedure: http://hongjoo71-e.blogspot.com/2015/07/e2e-volte-call-setup24-ims-registration.html
+                      http://hongjoo71-e.blogspot.com/2015/07/e2e-volte-call-setup14-initial-attach.html
+
+Tech invite search in google:
+
+https://www.aptsoftware.com/how-an-ims-network-assigns-and-maintains-a-s-cscf-for-an-user/
+https://theimsjungle.wordpress.com/2008/04/30/p-cscf-an-introduction/
+http://www.sharetechnote.com/
+http://hongjoo71-e.blogspot.com/2015/07/e2e-volte-call-setup24-ims-registration.html
+https://www.aptsoftware.com/how-an-ims-network-assigns-and-maintains-a-s-cscf-for-an-user/					  
+					  
+route> where the request has to be sent
+
+Layere of LTE (LTE STACK)
+Chennels of LTE
+
+??????????????????????????????????
+MIB
+SIB
+Stack layers
+channels
+VoWiFi
+TCNN3
+XCAP services(Setting and getting call forwording)
+
+
+UE capabilities pretty viewer: http://niviuk.free.fr/ue_capa.php
+
+=======================================================================================
+
+UE with P-cscf discovery find the P-cscf
+pcscf with DNS identify the Icscf
+
+SAR?? redmouse
+SAA??
+
+https://www.guru99.com/use-autoit-selenium.html
+
+353723090000381
+=======================================================================================

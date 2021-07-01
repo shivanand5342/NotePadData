@@ -1,0 +1,239 @@
+ANR in com.android.phone (com.android.settings/.Settings$ApnSettingsActivity)
+
+http://adbshell.com/downloads
+https://testguild.com/selenium-autoit/
+adb logcat -c -b all
+adb logcat -v threadtime -b all > Logcat.txt
+*************************************************************************************************
+Remove the private app :
+adb root_
+adb remount
+
+adb shell
+cd system
+/system # cd priv-app
+/system/priv-app # ls
+	KodiakPTT 
+/system/priv-app # cd KodiakPTT
+/system/priv-app/KodiakPTT # ls
+	KodiakPTT.apk oat
+/system/priv-app/KodiakPTT # rm -rf KodiakPTT.apk
+/system/priv-app/KodiakPTT # rm -rf oat
+/system/priv-app/KodiakPTT # ls
+/system/priv-app/KodiakPTT # exit
+
+PTT activation steps
+
+1. Sideload the Kodiok APK(adb install -r apk_path)
+2. Turn on Airplane mode and connect wifi
+3. Open AT&T EPTT application
+4. Allow the Application to access then select Use wifi Option
+5. Enter PTT code
+
+Note For PTT code Please contact to "Savitha Praveen" / "purushotham"
+*************************************************************************************************
+adb root
+adb remount
+adb shell
+1. Enable the kernel loggings:
+echo -n "file wcd9xxx-utils.c  +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file wcd-mbhc-v2.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file wcd-mbhc-v2.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file soc-dapm.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file soc-pcm.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file msm-pcm-routing-v2.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file q6afe.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file wcd9xxx-core.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file wcd9xxx-common-v2.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file wcd9xxx-resmgr-v2.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file wcd9xxx-slimslave.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file slim-msm-ngd.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file sdm660-common.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file sdm660-ext-dai-links.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file sdm660-external.c +p" > /sys/kernel/debug/dynamic_debug/control
+echo -n "file msm-dai-q6-v2.c +p" > /sys/kernel/debug/dynamic_debug/control
+
+2. Start the kernel and framework log together using the below command:
+logcat -b main -b kernel > /sdcard/kernel_wcd.txt &  
+
+3. Create directory inside the sdcard to capture the Qxdm logs.
+adb shell
+cd sdcard/
+mkdir diag_logs
+exit
+
+4.  Push the attached files to phone using the below commands:
+adb push  diag_mdlog.dat   /system/bin
+adb push  all_dsp.cfg   /sdcard/diag_logs/
+
+5.  Start the QXDM logs:
+ adb shell
+ cd system/bin/
+ ./diag_mdlog  -f /sdcard/diag_logs/all_dsp.cfg -o /sdcard/diag_logs/ &
+ 
+FOR ADB logs
+adb shell
+logcat -b main -b radio -b system -b events -v threadtime >> /mnt/sdcard/LogcatLogs.txt &
+
+Clear Off logs
+1. Kill the logcat process
+	adb shell
+	pkill logcat
+
+2. Kill the Qxdm Process
+	adb shell
+	pkill diag_mdlog
+
+3. Delete the old logs 
+	rm -f /sdcard/kernel_wcd.txt 
+	rm -rf /sdcard/diag_logs/
+*************************************************************************************************
+BATCH :
+
+adb wait-for-device
+adb logcat -b all >LogcatLogs.tx &
+
+adb wait-for-device
+adb root
+adb wait-for-device
+adb bugreport bugreport.zip
+
+cd /d D:\ChargeIssueBugreport
+
+logs:
+adb root 
+adb shell
+echo -n "file wcd-mbhc-v2.c +p" > /sys/kernel/debug/dynamic_debug/control
+logcat -b kernel -b main > /sdcard/ker_log.txt &
+exit
+adb shell 
+logcat -b main -b radio -b system -b events -v threadtime >> /mnt/sdcard/logcatLogs.txt & 
+
+1
+adb wait-for-device
+adb root
+adb wait-for-device
+
+@echo Dumping logs....... 
+adb remount 
+@echo duming logcat logs.... 
+adb shell logcat -b all -v time > /storage/emulated/0/logs.txt &
+
+pause	
+*************************************************************************************************
+Command to check the TP version
+C:\Users\karthik.j>adb shell
+XP8800: /# cat /sys/bus/i2c/devices/4-0024/ic_ver
+ex:
+C:\Users\karthik.j>adb shell
+XP8800:/ # cat /sys/bus/i2c/devices/4-0024/ic_ver
+Firmware Major Version: 0x02
+Firmware Minor Version: 0x00
+Revision Control Number: 0x000C3504
+Firmware Configuration Version: 0x0022
+Bootloader Major Version: 0x02
+Bootloader Minor Version: 0x00
+Protocol Major Version: 0x01
+Protocol Minor Version: 0x02
+*************************************************************************************************
+adb install -r exampleApp.apk (The -r makes it replace the existing copy)
+*************************************************************************************************
+LOGS: 
+adb logcat -b all >filename.txt 
+
+adb shell
+logcat -b all -v time > /sdcard/logs.txt &
+control+c
+exit
+adb pull /sdcard/logs.txt
+
+Screen record
+adb shell screenrecord /sdcard/demo.mp4 
+
+adb pull /sdcard/logs.txt
+*************************************************************************************************	
+adb shell dumpsys>file.xt
+*************************************************************************************************	
+adb root
+adb disable-verity
+adb reboot
+_________________________________________________________________________________________________
+To get the properties of the device(finger print)
+adb getprop
+_________________________________________________________________________________________________
+adb reboot bootloader
+_________________________________________________________________________________________________
+adb shell "dumpsys telephony.registry | grep mCallState"
+
+will return:
+0 indicates idle,
+1 = ringing and
+2 = active call
+________________
+To get the package and activity 
+adb shell
+dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'
+
+Q device: adb shell "dumpsys activity activities | grep ResumedActivity"
+_____________________________________________________________________
+
+
+
+
+
+@echo off
+adb wait-for-device
+
+for /l %%x in (1, 1, 10) do (
+echo This is call number is %%x  
+adb shell am start -a android.intent.action.CALL -d tel:9449665342
+timeout /T 20 /NOBREAK 
+adb shell input keyevent KEYCODE_ENDCALL
+timeout /T 10 /NOBREAK 
+)
+pause
+
+
+Process process2 = Runtime.getRuntime().exec("adb shell dumpsys telephony.registry | grep 'mCallState'");
+		InputStream in=process2.getInputStream();
+		InputStreamReader read=new InputStreamReader(in);
+		BufferedReader bf=new BufferedReader(read);
+		System.out.println(bf.readLine());
+		
+_________________________________________________________________________________________________
+String file1 = new String("C:\\temp\\Sept_2016\\22Sept\\MSP_Files\\msp.txt");
+String file2 = new String("C:\\temp\\Sept_2016\\22Sept\\MIB_Files\\mib.txt");
+String file3 = new String("C:\\temp\\Sept_2016\\22Sept\\mismatch.txt");
+Runtime.getRuntime().exec(new String[]{"cmd.exe", "/c", "start C:\\temp\\Sept_2016\\22Sept\\filecompare.bat", file1, file2, file3}); 		
+__________________________________________________________________________________________________
+adb shell pm list packages -f > .txt
+
+__________________________________________________________________________________________________
+
+) Now flash attached system.img file as below :
+a) adb reboot bootloader
+b) fastboot flash system <system.img file path>
+c)fastboot reboot
+
+------------------------------------------------------------------------------------
+
+adb devices
+adb tcpip 5555
+adb connect 199.64.70.96:5555
+------------------------------------------------------------------------------------
+if device flashed without removing the google account
+adb reboot bootloader
+fastboot erase frp
+adb reboot
+-------------------------------------------------------------------------------------
+adb devices       # Check the phone is running
+adb reboot bootloader
+
+# check if device available
+fastboot devices
+
+# reboot device
+fastboot reboot
+-------------------------------------------------
+to Factory data reset
+adb shell cmd testharness enable

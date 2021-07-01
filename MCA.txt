@@ -1,0 +1,17 @@
+3rd SEM
+321 MULTIMEDIA AND ITS APPLICATIONS > Friday 9th April 2021
+331 PRINCIPLES OF COMPILER DESIGN   > Saturday 10th April 2021
+341 ANALYSIS AND DESIGN OF INFORMATION SYSTEMS > Sunday 11th April 2021 
+============================================
+511 COMPUTER GRAPHICS AND IMAGE PROCESSING  > Sunday 18th April 2021
+521 NETWORK SECURITY                        > Monday 19th April 2021
+531 UNIFIED MODELING LANGUAGE               > Tuesday 20th April 2021
+542 MANAGEMENT CONCEPTS AND COMMUNICATION   > Wednesday 21st April 2021
+ELECTIVE-II
+552 MODELING & SIMULATION Thursday 22nd April 2021
+553 DATA WAREHOUSING & MINING Friday 23rd April 2021
+
+561 Programming Lan IX > Computer Graphics >>02-07-2021 (Friday) at 09.30 AM to 12.30 PM
+571 Programming Lab X > System Development Lab >> 03-07-2021 (Saturday) at 09.30 AM to 12.30 PM
+
+

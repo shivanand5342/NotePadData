@@ -1,0 +1,109 @@
+XP8 Canadian
+GOTA Server:
+FOTA upgrade for CANDIAN:
+https://partner.android.com/ota
+Username: sonimquality@sonimtech.co.in
+Password: C8>dFLMV1
+
+1.sonim_xp8800_xp8832 for BELL.
+2.sonim_xp8800_xp8833 for TELUS.      
+3.sonim_xp8800_xp8834 for ROGERS.      
+4.sonim_xp8800_xp8835 for SASKTEL.
+
+1.Uploading the package to server:
+Step 1:Select sonim_xp8800_xp8832
+Step 2: Click on OTA packages tab-->Add package-->Select-->Select FOTA package path,which you have downloaded from FTP-->Upload.
+
+2.Creating OTA configuration:
+Step1: Click on OTA configuration tab-->Add configuration. 
+a).Enter title, Eg-XP8_Bell_Vxx_Vxx_QATest 
+b)Enter title under UI Text and for 
+c)descrioption same as above for your convenience.
+d)Enter post success message as,Update/fota success.
+e)Enter post failure message as,Update/fota failed!, try again.
+f)Update behaviour as Recommended always for testing and click on next button at bottom right corner, 
+  dont change anything i this page which specific to live operators.
+Step 2: Review the OTA config, which you have created in Step 1 and Save it.
+Step 3: Associate Package-->Select the valid package in the drop down-->Add-->Submit.
+
+3. Creating Device group:
+Step 1: Click Device group tab, click on Add Group at the bottom right corner-->Enter the group name-->Add.
+
+4:  Creating Assignments:
+Step 1: Go to Assignments tab select device group which you havecreated-->Edit config-->select the config. which you have created in Step 2-->Add-->OK.(We can add multiple configuration to a single Assignment, which you can explore on your own). 
+Step2: Now, Enable the 2 ckeck boxes provided and click on Publish.
+
+5.Adding devices:
+Step1:  Select the Device group which you have created in Step 3--> Add devices-->click on Add.Add the devices in any of the below format. 
+1.imei:xxxxx 
+2.serial:device:xxxxx (in ascii format)
+3.meid:xxxxx 
+
+Problem we may encounter while adding devices:
+1.While adding devices, we may get error like,“There was an error adding the devices:Device imei:015141000027891 
+doesn't match build prefix restrictions ([Sonim/XP8833/XP8800]) or fingerprint restrictions ([release-keys]).
+”Which means, the device s/w may not be matching with the operator which you are going to add. In that case, 
+we may need to browse for a while to get it sync with specific operator after flashing. 
+ 
+Types of update behavior:
+1. Recommended:- User is notified that an update is available for download.-User is prompted to approve the download.-After the update has been downloaded, 
+   the user is prompted to approve the installation and device reboot.-Device reboots and applies the update.
+2. Mandatory:- User is notified that an update has been downloaded and is waiting to be installed. -User is prompted to approve installation. 
+   -Device reboots and applies the update. Mandatory_none--> updates will download immidietly without user interaction over data/wifi.
+   Mandatory_forever--> updates will download immidietly without user interaction over only wifi. 
+3. Automatic:- Update is downloaded and installed without user notification or action (device automatically reboots).
+   NOTE: We usually will not test this behavior. For more info, please explore GOTA user guide available in the server itself.
+
+-------------------------------------------------------------------------------------------------------------------
+SL:
+XP8:
+1. From FTP download FOTA file
+2. upload donwloaded FOTA file in Box link(All Files->SL Builds)
+3. Goto Nokia Request site -> Issues -> Create issue (with proper summary and Description) -> create 
+4. Firmware update in motive server
+5. Check the policies
+6. *#*#dmtest#*#* : To change server in FOTA client in device.
+7. System update
+
+Nokia FOTA Server ticket :
+https://portal.motive.com/request/browse/SOULIOT-176
+Username : sonimqa
+Password : Sonim@123
+
+Dev Server :
+https://xmcdpi.xdev.motive.com/ui/home.html?logoutSuccess=1#/
+User Name : sonim1
+Password  : PhESgewA2uj
+
+To Enable policies :
+https://xmcdpi.xdev.motive.com/ui/home.html?logoutSuccess=1#/
+User Name: harish
+Password: S0n1mT3ch
+
+Subscriber ID : Phone No
+*#*#dmtest#*#* : To change server in FOTA client in device.
+ 
+Go to policy and enable
+Encryption tool :
+https://www.qqxiuzi.cn/bianma/md5.htm
+ 
+FOTA Pre-pod Server :
+https://cmcdpi.cert.motive.com/ui/#/
+User Name : ramolina
+Password : asx80&nkNcJsp
+
+Devices added in FOTA server :
+XP5S :
+1. IMEI : 001080001862698 MDN : 2293582102
+2. IMEI : 001080001862581 MDN : 2052882752
+
+XP8 :
+1. IMEI : 015139000004837 : MDN : 7705507159 (3rd Page)
+2. IMEI : 015139000001866 : MDN : 3348282157  (2052882376)
+3. IMEI : 015139000001882 : MDN : 3348282164 (3348280528)
+
+Key sequence to factory reset the device
+*#*#625327#*#*
+
+GPS Provider :
+*#*#246#*#*

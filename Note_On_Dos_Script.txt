@@ -1,0 +1,288 @@
+::1)initialization using Set Command
+
+::Syntax:
+set /A variable_name=value
+
+where,
+/A – This switch is used if the value needs to be numeric in nature.
+
+EX:
+@echo off 
+set message=Hello World 
+echo %message%
+
+Working with Numeric Values
+@echo off 
+SET /A a = 5 
+SET /A b = 10 
+SET /A c = %a% + %b% 
+echo %c% 
+SET /A c = %a% - %b% 
+echo %c% 
+SET /A c = %b% / %a% 
+echo %c% 
+SET /A c = %b% * %a% 
+echo %c%
+
+::************************************************************************
+//Local vs Global Variables
+
+@echo off 
+set /A globalvar = 5
+SETLOCAL
+set /a var = 45
+set /A var = %var% + 5
+echo %var%
+echo %globalvar%
+ENDLOCAL
+
+::************************************************************************
+Comments Using the Rem Statement
+Syntax: Rem any Statements
+
+ex:
+@echo off 
+Rem This program just displays Hello World 
+set message=Hello World 
+echo %message%
+
+Comments Using the :: Statement
+Syntax 
+:: Remarks
+
+::************************************************************************
+Creating an Array
+
+Syntax: set a[0]=1
+
+Accessing Arrays
+@echo off
+set a[0] = 1 
+set a[1] = 2 
+set a[2] = 3 
+echo The first element of the array is %a[0]% 
+echo The second element of the array is %a[1]% 
+echo The third element of the array is %a[2]%
+
+::************************************************************************
+Decision Making
+ 1.If Statement
+   Syntax: if(condition) do_something
+   
+   ex:
+@echo off 
+SET /A a = 5 
+SET /A b = 10 
+SET /A c = %a% + %b% 
+if %c%==15 echo "The value of variable c is 15" 
+ 
+ ex:
+@echo off 
+SetLocal EnableDelayedExpansion
+set str1 = String1 
+set str2 = String2 
+if !str1!==!str2! (echo "The value of variable String1" ) else (echo not equal)
+
+ 2.If/else Statement
+ Syntax: If (condition) (do_something) ELSE (do_something_else)
+
+ex: 
+@echo off 
+SET /A a = 5 
+SET /A b = 10
+SET /A c = %a% + %b% 
+if %c%==15 (echo "The value of variable c is 15") else (echo "Unknown value") 
+
+ 3.Nested If Statements
+ Syntax: if(condition1) if (condition2) do_something
+ 
+ex: 
+ @echo off
+SET /A a = 5
+SET /A b = 10
+if %a%==5 if %b%==10 (echo "The value of the variables are correct") else (echo "the values are not correct")
+::************************************************************************
+Goto Statement
+
+ex:
+@echo off 
+SET /A a = 5 
+
+if %a%==5 goto :labela 
+if %a%==10 goto :labelb
+
+:labela 
+echo "The value of a is 5" 
+
+exit /b 0  :: here /b is to put break
+
+:labelb 
+echo "The value of a is 10"
+::************************************************************************
+Operators:
+::Arithmetic Operators (+ , - , * , / , %)
+ex:
+@echo off
+SET /A a = 5
+SET /A b = 10
+SET /A c = %a%+%b%
+echo %c%
+SET /A c = %a%-%b%
+echo %c%
+SET /A c = %b%*%a%
+echo %c%
+SET /A c = %b%/%a%
+echo %c%
+SET /A c =%b% %% %a%
+echo %c%
+
+::Relational Operators
+@echo off 
+SET /A a = 5 
+SET /A b = 10 
+if %a% EQU %b% echo A is equal to than B 
+if %a% NEQ %b% echo A is not equal to than B 
+if %a% LSS %b% echo A is less than B 
+if %a% LEQ %b% echo A is less than or equal B
+if %a% GTR %b% echo A is greater than B 
+if %a% GEQ %b% echo A is greater than or equal to B
+
+::Assignment Operators
+@echo off
+SET /A a = 5
+SET /A a+=5
+echo %a%
+SET /A a-=5
+echo %a%
+SET /A a*=5
+echo %a%
+SET /A a/=5
+echo %a%
+SET /A a%=5
+echo %a%
+
+::************************************************************************
+Rem Functions
+ Syntax:
+ :function_name 
+ Do_something
+ EXIT /B 0
+
+Rem Calling the Function:
+ Syntax:
+ call :function_name
+ 
+Rem Functions with Parameters
+ Syntax:
+ Call :function_name parameter1, parameter2… parametern
+
+ex:
+@echo off 
+SETLOCAL 
+CALL :Display 34
+EXIT /B 0
+
+:Display 
+SET /A index=2 
+echo The value of index is %index% 
+echo The taken parameter value is %~1
+EXIT /B 0  
+ 
+Rem Functions with Return Values
+Syntax:
+Call :function_name value1, value2… valuen
+
+ex:
+@echo off
+SETLOCAL
+CALL :SetValue value1,value2
+echo %value1%
+echo %value2%
+EXIT /B %ERRORLEVEL%
+:SetValue
+set /a "%~1 = 5"
+set /a "%~2 = 10"
+EXIT /B 0
+ 
+::************************************************************************
+Rem Command Line Arguments
+
+@echo off
+echo The first parameter is %0
+echo The second parameter is %1
+echo The third parameter is %2
+echo The fourth parameter is %3
+.
+.
+.
+echo last parameter is %9
+ 
+cmd: Test.bat 1 2 3
+::************************************************************************
+Rem File I/O
+Following are some of the operations that can performed on files.
+1 Creating files
+2 Reading files
+3 Writing to files
+4 Deleting files
+5 Moving files
+6 Renaming files
+
+Rem Creating files
+@echo off
+echo "Hello"> new.txt
+
+Rem Reading files
+@echo off
+FOR /F "tokens=* delims=" %%x in (new1.txt) DO echo %%x
+
+Note:
+The delims parameter is used to break up the text in the file into different tokens or words. Each word or token is then stored in the variable x. 
+For each word which is read from the file, an echo is done to print the word to the console output.
+
+Rem Writing files
+@echo off
+dir >C:\new.txt
+
+Rem Deleting files
+Examples
+del test.bat
+The above command will delete the file test.bat in the current directory, if the file exists.
+
+del c:\test.bat
+The above command will delete the file C:\test.bat in the current directory, if the file exists.
+
+del c:\*.bat
+The * (asterisks) is a wild character. *.bat indicates that you would like to delete all bat files in the c:\directory.
+
+del c:\?est.tmp
+The ? (question mark) is a single wild character for one letter. 
+The use of this command in the above example will delete any file ending with "est.tmp", 
+such as pest.tmp or test.tmp.
+
+Rem Moving files
+Move single file
+move test.txt c:\example
+
+Move multiple files
+move new.txt, test.txt c:\example
+
+Rem Renaming files
+
+ex1 -> rename *.txt *.bak
+ 
+ex2 -> rename "TESTA.txt" "TESTB.txt"
+
+Rem Appending to Files
+@echo off
+echo "Hello" > new.txt
+
+@echo off
+echo "World" >> new.txt
+::************************************************************************
+Rem This is for listing down all the files in the directory Program files 
+::dir "C:\Program Files" > C:\lists.txt 
+::echo "The program has completed"
+
+::************************************************************************
+https://www.tutorialspoint.com/batch_script/batch_script_creating_files.htm

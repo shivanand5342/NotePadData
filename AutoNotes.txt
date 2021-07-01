@@ -1,0 +1,77 @@
+if you want to terminate the execution throw the exception
+Java Maven surefire plugin: Apache/ Maven/ Surefire/ Maven Surefire Plugin/ Using TestNG Edit
+String URL =  "https://"+username+":"+password+"@"+"www.google.com(sample site)";
+driver.get(URL);
+
+GIT:
+PersonA
+All the commands at project path
+
+git config --global user.name "shivanand5342"
+git config --global user.email "s2shivanand@gmail"
+git init
+git add *
+git status
+git commit -m "First Message"
+git remote add origin https://github.com/shivanand5342/GitStuff.git
+git push origin master
+>>it may ask authentication credentials
+=============================
+PersonB loaded frame work to his system(Clone for the first time)
+git clone https://github.com/shivanand5342/GitStuff.git
+
+============================
+PersonB
+This guy logged in and made changes
+git add *
+git status
+git commit -m "Second Message"
+git remote add Origin https://github.com/shivanand5342/GitStuff.git
+git push origin master
+============================
+PersonA
+git remote add Origin https://github.com/shivanand5342/GitStuff.git
+git pull origin master
+============================
+PersonA
+git status
+git add *
+git commit -m "Third Message"
+git remote add origin https://github.com/shivanand5342/GitStuff.git
+git push origin master
+=========================
+PersonB
+git remote add Origin https://github.com/shivanand5342/GitStuff.git
+git pull origin master
+============================================================
+PersonB
+Branches
+Create a new branch and switch to it:
+git checkout -b develop
+
+List all the branches in your repo, and also tell you what branch you're currently in:
+git branch
+
+do some changes in the code and check the status
+git status
+
+git add*
+git commit -m "Fourth Message"
+git push origin develop
+============================================================
+PersonA
+git pull origin develop
+
+Switch from one branch to another:
+git checkout develop
+git add*
+git commit -m "Fifth Message"
+git push origin develop
+============================================================
+PersonB
+To merge a different branch into your active branch:
+git merge develop
+
+
+
+

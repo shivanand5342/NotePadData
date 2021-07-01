@@ -1,0 +1,43 @@
+FOTA :
+http://www.thunderfota.com/ThunderFOTA/home?localLan=en
+User = SonimAdmin_Sonimtech
+Password = sonim_1234
+
+XP5s_ROGERS_Sonim
+XP5s_BELL_Test_Group
+XP5s_TELUS_Sonim
+
+Bell:
+Push-to-Talk Bell
+1. BelPTT(235788) -> PTT button -> Configuration Information -> check of QC for India(to check app is test or product app)
+2. Enable/Desable logges need to select to collect logs
+3. 
+***********************************************************************************
+Telus:
+ES Chat and Telus Link
+***********************************************************************************
+Rogers:
+NOVA TALK
+
+https://portal.sla-ptt.com/portal/
+user name : purushotham.v@sonimtech.com
+Password : Password@123
+
+Steps to create
+Add User
+User Login: User name (ex: Shiva1)
+First Name: Shiva
+Last Name: 1
+Submit
+select the user(ex: Shiva1) > Select Clear Public Key > Use the Activation Code
+
+***********************************************************************************
+SL:
+password reset: https://ssp.imw.southernlinc.com:49641/ssam/recoverPassword
+gmail:sonimptt21@gmail.com
+PW: sonim12345
+
+Device id: 18618795633
+Agency name: solincagency1
+server link: imw.southernlinc.com
+**********************************************************************************
